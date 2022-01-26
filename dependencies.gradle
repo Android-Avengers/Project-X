@@ -21,6 +21,9 @@ ext.versions = [
         roomVersion          : '2.4.0',
         archCompomentVersion : '2.1.0',
 
+        // startup
+        startup              : '1.1.0',
+
         // di
         hiltCore             : '2.40.5',
         hilt                 : '1.0.0',
@@ -35,6 +38,9 @@ ext.versions = [
 
         // coroutines
         coroutines           : '1.6.0',
+
+        // utility
+        timber               : '5.0.1',
 
         // testing
         junit                : '4.13.1',

@@ -45,6 +45,9 @@ dependencies {
     androidTestImplementation "androidx.test.ext:junit:$versions.androidXTestJunit"
     androidTestImplementation "androidx.test.espresso:espresso-core:$versions.espresso"
 
+    // Startup
+    implementation "androidx.startup:startup-runtime:$versions.startup"
+
     // Retrofit
     implementation "com.squareup.retrofit2:retrofit:$versions.retrofit"
     implementation "com.squareup.retrofit2:converter-gson:$versions.gson"
@@ -65,4 +68,7 @@ dependencies {
     androidTestImplementation "com.google.dagger:hilt-android-testing:$versions.hiltCore"
     implementation "androidx.hilt:hilt-lifecycle-viewmodel:$versions.hiltViewModel"
     kaptAndroidTest "com.google.dagger:hilt-compiler:$versions.hilt"
+
+    // Timber
+    implementation "com.jakewharton.timber:timber:$versions.timber"
 }
