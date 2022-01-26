@@ -2,14 +2,18 @@ package io.velvetcreek.projectx
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import dagger.hilt.android.AndroidEntryPoint
 import io.velvetcreek.projectx.Network.IApiService
 import io.velvetcreek.projectx.Network.PokemonRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import timber.log.Timber
 import javax.inject.Inject
+
+import timber.log.Timber.*
+import timber.log.Timber.Forest.plant
+
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -20,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         CoroutineScope(Dispatchers.IO).launch {
-            Log.d("asdf", "${PokemonRepository(pokemonService).getPokemon("pikachu").body()}")
+            Timber.d("${PokemonRepository(pokemonService).getPokemon("pikachu").body()}")
         }
     }
 }
