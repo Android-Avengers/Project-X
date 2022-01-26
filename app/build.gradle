@@ -3,17 +3,20 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
+//    id 'com.github.ben-manes.versions' version '0.41.0' // Alternative declaration
 }
 
 android {
-    compileSdk 31
+    apply from: "$rootDir/dependencies.gradle"
+
+    compileSdk versions.compileSdk
 
     defaultConfig {
         applicationId "io.velvetcreek.projectx"
-        minSdk 29
-        targetSdk 31
-        versionCode 1
-        versionName "1.0"
+        minSdk versions.minSdk
+        targetSdk versions.compileSdk
+        versionCode versions.versionCode
+        versionName versions.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -29,37 +32,37 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '11'
     }
 }
 
 dependencies {
+    implementation "androidx.core:core-ktx:$versions.ktx"
+    implementation "androidx.appcompat:appcompat:$versions.appCompat"
+    implementation "com.google.android.material:material:$versions.material"
+    implementation "androidx.constraintlayout:constraintlayout:$versions.constraintLayout"
+    testImplementation "junit:junit:$versions.junit"
+    androidTestImplementation "androidx.test.ext:junit:$versions.androidXTestJunit"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$versions.espresso"
 
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.4.0'
-    implementation 'com.google.android.material:material:1.4.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
-    testImplementation 'junit:junit:4.+'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$versions.retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$versions.gson"
+    implementation("com.squareup.okhttp3:okhttp:$versions.okhttp")
 
-    //Retrofit
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation "com.squareup.retrofit2:converter-gson:2.9.0"
-    implementation("com.squareup.okhttp3:okhttp:4.9.0")
-    //Logging Interceptor
-    implementation("com.squareup.okhttp3:logging-interceptor:4.1.0")
+    // Logging Interceptor
+    implementation("com.squareup.okhttp3:logging-interceptor:$versions.okhttp")
 
     // Coroutines
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0"
-    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0"
-    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.coroutines"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.coroutines"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$versions.coroutines"
 
     // Hilt
-    implementation "com.google.dagger:hilt-android:2.40.5"
-    kapt "com.google.dagger:hilt-compiler:2.40.5"
-    kapt "androidx.hilt:hilt-compiler:1.0.0"
-    androidTestImplementation "com.google.dagger:hilt-android-testing:2.40.5"
-    implementation "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03"
-    kaptAndroidTest "com.google.dagger:hilt-compiler:1.0.0"
+    implementation "com.google.dagger:hilt-android:$versions.hiltCore"
+    kapt "com.google.dagger:hilt-compiler:$versions.hiltCore"
+    kapt "androidx.hilt:hilt-compiler:$versions.hilt"
+    androidTestImplementation "com.google.dagger:hilt-android-testing:$versions.hiltCore"
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$versions.hiltViewModel"
+    kaptAndroidTest "com.google.dagger:hilt-compiler:$versions.hilt"
 }
