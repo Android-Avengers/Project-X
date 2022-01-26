@@ -71,4 +71,11 @@ dependencies {
 
     // Timber
     implementation "com.jakewharton.timber:timber:$versions.timber"
+
+    // Room
+    implementation "androidx.room:room-runtime:$versions.room"
+    kapt "androidx.room:room-compiler:$versions.room" // use kapt instead of annotationProcessor
+    testImplementation "androidx.room:room-testing:$versions.room"
+    implementation "androidx.room:room-paging:$versions.room"
+    implementation "androidx.room:room-ktx:$versions.room" // coroutines
 }

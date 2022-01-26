@@ -4,13 +4,16 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import io.velvetcreek.projectx.Network.Constants.CHUCK_NORRIS_API_BASE_URL
 import io.velvetcreek.projectx.Network.Constants.POKEMON_API_BASE_URL
 import io.velvetcreek.projectx.Network.IApiService
+import io.velvetcreek.projectx.Network.IChuckNorrisService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
+import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
@@ -29,17 +32,40 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun providesPokemonRetrofitClient(okHttpClient: OkHttpClient): Retrofit {
+    fun providesBaseRetrofitBuilder(okHttpClient: OkHttpClient): Retrofit.Builder {
         return Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
             .client(okHttpClient)
+    }
+
+    @Provides
+    @Singleton
+    @Named("PokemonRetrofit")
+    fun providesPokemonRetrofitClient(retrofitBuilder: Retrofit.Builder): Retrofit {
+        return retrofitBuilder
+            .addConverterFactory(GsonConverterFactory.create())
             .baseUrl(POKEMON_API_BASE_URL)
             .build()
     }
 
     @Provides
     @Singleton
-    fun providePokemonService(retrofit: Retrofit): IApiService {
+    fun providePokemonService(@Named("PokemonRetrofit") retrofit: Retrofit): IApiService {
         return retrofit.create(IApiService::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun providesChuckNorrisRetrofitClient(retrofitBuilder: Retrofit.Builder): Retrofit {
+        return retrofitBuilder
+            .addConverterFactory(GsonConverterFactory.create())
+            .baseUrl(CHUCK_NORRIS_API_BASE_URL)
+            .build()
+    }
+
+    @Provides
+    @Singleton
+    fun provideChuckNorrisService(retrofit: Retrofit): IChuckNorrisService {
+        return retrofit.create(IChuckNorrisService::class.java)
     }
 }
