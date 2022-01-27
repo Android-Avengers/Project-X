@@ -31,8 +31,11 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    kotlinOptions {
-        jvmTarget = '11'
+//    kotlinOptions {
+//        jvmTarget = '11'
+//    }
+    buildFeatures {
+        viewBinding true
     }
 }
 
@@ -78,4 +81,8 @@ dependencies {
     testImplementation "androidx.room:room-testing:$versions.room"
     implementation "androidx.room:room-paging:$versions.room"
     implementation "androidx.room:room-ktx:$versions.room" // coroutines
+
+    // Flutter Module
+    implementation project(':flutter')
+//    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }

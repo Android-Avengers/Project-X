@@ -7,11 +7,23 @@
 ./gradlew dependencyUpdates
 ```
 
+## Flutter
+```
+module names must be in snake_case
+```
+
+## Tools
+- [PID Cat](https://github.com/JakeWharton/pidcat)
+
 ## Paths
 ```
 // Mac
 /Users/*username*/Library/Android/sdk
 ```
 
-## Tools
-- [PID Cat](https://github.com/JakeWharton/pidcat)
+## Commands
+### Shell
+```
+pwd | pbcopy
+pbpaste
+```

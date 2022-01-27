@@ -3,6 +3,7 @@ apply from: "$rootDir/versions.gradle"
 
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
+    ext.kotlin_version = '1.6.10'
     apply from: "$rootDir/dependencies.gradle"
     repositories {
         google()
@@ -15,9 +16,17 @@ buildscript {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
         classpath "com.google.dagger:hilt-android-gradle-plugin:$versions.hiltCore"
         classpath "com.github.ben-manes:gradle-versions-plugin:$versions.versions"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
+    }
+}
+// Need to add repos to all projects with addition of flutter module
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
     }
 }
 
