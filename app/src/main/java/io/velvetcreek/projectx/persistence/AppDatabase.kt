@@ -1,4 +1,4 @@
-package io.velvetcreek.persistence
+package io.velvetcreek.projectx.persistence
 
 import androidx.room.Database
 import androidx.room.RoomDatabase

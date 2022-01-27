@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.room.Room
 import dagger.hilt.android.AndroidEntryPoint
 import io.flutter.embedding.android.FlutterActivity
-import io.velvetcreek.persistence.AppDatabase
+import io.velvetcreek.projectx.persistence.AppDatabase
 import io.velvetcreek.projectx.Network.IApiService
 import io.velvetcreek.projectx.Network.IChuckNorrisService
 import io.velvetcreek.projectx.databinding.ActivityMainBinding
@@ -47,16 +47,15 @@ class MainActivity : AppCompatActivity() {
             )
         }
 
+        CoroutineScope(Dispatchers.IO).launch {
+//            Timber.d("${PokemonRepository(pokemonService).getPokemon("pikachu").body()}")
 
-//        CoroutineScope(Dispatchers.IO).launch {
-////            Timber.d("${PokemonRepository(pokemonService).getPokemon("pikachu").body()}")
-//
-//            val data = ChuckNorrisRepository(chuckNorrisService).getJoke().data
-//            Timber.d("$data")
-//            data?.let {
-//                db.jokeDao().insertJoke(data)
-//            }
-//            Timber.d("jokes---------> ${db.jokeDao().getAllJokes()}")
-//        }
+            val data = ChuckNorrisRepository(chuckNorrisService).getJoke().data
+            Timber.d("$data")
+            data?.let {
+                db.jokeDao().insertJoke(data)
+            }
+            Timber.d("jokes---------> ${db.jokeDao().getAllJokes()}")
+        }
     }
 }
