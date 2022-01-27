@@ -16,6 +16,8 @@ ext.versions = [
 
         // architecture components
         ktx                  : '1.7.0',
+        fragment             : '1.4.0',
+        lifecycle            : '2.4.0',
         appCompat            : '1.4.0',
         constraintLayout     : '2.1.2',
         roomVersion          : '2.4.0',

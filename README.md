@@ -1,3 +1,7 @@
+## TODO
+- Cache remote values and fetch locally first then remote
+- DI persistence
+
 ## Gradle Tasks
 
 ### Dependency Updates

@@ -9,10 +9,20 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/tvJoke"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:text="Hello World!" />
+
+    <Button
+        android:id="@+id/btnGetJoke"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textAlignment="center"
+        android:text="Get Joke"
+        />
 
     <Button
         android:id="@+id/btn"
