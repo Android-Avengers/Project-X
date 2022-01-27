@@ -11,10 +11,10 @@ interface JokeDao {
     @Query("SELECT * FROM Joke")
     suspend fun getAllJokes(): List<Joke>?
 
-    // TODO: Fix key error
-//    @Query("SELECT * FROM Joke WHERE id = :id_")
-//    suspend fun getJoke(id_: String): Joke?
+    @Query("SELECT * FROM Joke WHERE id = :id")
+    suspend fun getJoke(id: String): Joke?
 
-//    @Delete
-//    suspend fun delete(id: String)
+//    @Insert & @Delete // Need to use entity or collection/array for @Insert/@Delete
+    @Query("DELETE FROM Joke WHERE id = :id")
+    suspend fun delete(id: String)
 }
