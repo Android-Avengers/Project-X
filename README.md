@@ -2,6 +2,9 @@
 - Cache remote values and fetch locally first then remote
 - DI persistence
 
+## Firebase
+- Need to add ```google-services.json``` to app level directory
+
 ## Gradle Tasks
 
 ### Dependency Updates
@@ -30,4 +33,9 @@ module names must be in snake_case
 ```
 pwd | pbcopy
 pbpaste
+```
+
+### Android Studio (Mac)
+```
+Preview Method Params: cmd + p
 ```

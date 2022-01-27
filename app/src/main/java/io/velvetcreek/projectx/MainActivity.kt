@@ -2,6 +2,8 @@ package io.velvetcreek.projectx
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.ViewGroup
+import android.widget.Button
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.room.Room
@@ -57,6 +59,8 @@ class MainActivity : AppCompatActivity() {
             chuckNorrisViewModel.getJoke()
         }
 
+        crashlyticsTest()
+
         lifecycleScope.launchWhenStarted {
             chuckNorrisViewModel.joke.collect { event ->
                 when (event) {
@@ -73,6 +77,20 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    private fun crashlyticsTest() {
+        // Doesn't apply theme and adds to top of view
+        val crashButton = Button(this).apply {
+            text = "Test Crash"
+            setOnClickListener {
+                throw RuntimeException("Test Crash") // Force a crash
+            }
+        }
+        addContentView(crashButton, ViewGroup.LayoutParams(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT)
+        )
     }
 
     fun test() {

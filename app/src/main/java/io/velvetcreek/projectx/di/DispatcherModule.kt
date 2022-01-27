@@ -9,6 +9,7 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import javax.inject.Singleton
 
+// Created for the sake of better testability
 @Module
 @InstallIn(SingletonComponent::class)
 object DispatcherModule {
