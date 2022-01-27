@@ -21,6 +21,9 @@ ext.versions = [
         roomVersion          : '2.4.0',
         archCompomentVersion : '2.1.0',
 
+        // jetpack
+        room                 : '2.4.1',
+
         // startup
         startup              : '1.1.0',
 

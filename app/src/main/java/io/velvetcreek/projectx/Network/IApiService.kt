@@ -1,6 +1,6 @@
 package io.velvetcreek.projectx.Network
 
-import io.velvetcreek.projectx.Model.PokemonApiResponse
+import io.velvetcreek.projectx.Model.pokemon.PokemonApiResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path

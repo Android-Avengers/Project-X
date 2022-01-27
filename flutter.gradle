@@ -1,0 +1,7 @@
+// Need to separate out to a different gradle file to sync
+setBinding(new Binding([gradle: this]))
+
+evaluate(new File (
+        settingsDir.parentFile,
+        'ProjectX/flutter_module/.android/include_flutter.groovy'
+))
