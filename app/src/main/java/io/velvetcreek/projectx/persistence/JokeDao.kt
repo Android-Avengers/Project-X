@@ -1,4 +1,4 @@
-package io.velvetcreek.persistence
+package io.velvetcreek.projectx.persistence
 
 import androidx.room.*
 import io.velvetcreek.projectx.Model.chuckNorris.Joke
