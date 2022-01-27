@@ -17,3 +17,4 @@ apply { from("flutter.gradle") }
 //        'ProjectX/flutter_module/.android/include_flutter.groovy'
 //))
 include ':flutter_module'
+include ':feature1'
