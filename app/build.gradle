@@ -21,6 +21,9 @@ android {
         versionName versions.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary true
+        }
     }
 
     buildTypes {
@@ -38,7 +41,12 @@ android {
     }
     buildFeatures {
         viewBinding true
+        compose true
     }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "$versions.compose"
+    }
+
 }
 
 dependencies {
@@ -115,4 +123,18 @@ dependencies {
 
     // Add the dependencies for any other desired Firebase products
     // https://firebase.google.com/docs/android/setup#available-libraries
+
+    // Compose
+    // Integration with activities
+    implementation "androidx.activity:activity-compose:$versions.composeActivity"
+    // Compose Material Design
+    implementation "androidx.compose.material:material:$versions.compose"
+    // Animations
+    implementation "androidx.compose.animation:animation:$versions.compose"
+    // Tooling support (Previews, etc.)
+    implementation "androidx.compose.ui:ui-tooling:$versions.compose"
+    // Integration with ViewModels
+//    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:$versions.composeViewModel"
+    // UI Tests
+//    implementation "mentation 'androidx.compose.ui:ui-test-junit4:$versions.compose"
 }

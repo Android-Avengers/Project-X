@@ -2,6 +2,7 @@
 - Cache remote values and fetch locally first then remote
 - DI persistence
 - Android 12 Themes
+- Fix junit4 dep errors, could be due to appcompat & jetpack clashing
 
 ## Firebase
 - Need to add ```google-services.json``` to app level directory

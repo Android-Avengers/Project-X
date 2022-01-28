@@ -1,4 +1,4 @@
-package io.velvetcreek.projectx
+package io.velvetcreek.projectx.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
