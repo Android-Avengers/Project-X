@@ -1,9 +1,11 @@
 ## TODO
 - Cache remote values and fetch locally first then remote
 - DI persistence
+- Android 12 Themes
 
 ## Firebase
 - Need to add ```google-services.json``` to app level directory
+- Test user pass `qwerasdf`
 
 ## Gradle Tasks
 
