@@ -8,6 +8,7 @@ jobs:
     executor:
       name: android/android-machine
       resource-class: large
+      tag: 2021.01.29 # Missing required argument(s): tag
     steps:
       - checkout
       - android/start-emulator-and-run-tests:
