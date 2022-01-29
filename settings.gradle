@@ -8,13 +8,14 @@ dependencyResolutionManagement {
 rootProject.name = "Project X"
 include ':app'
 
-apply { from("flutter.gradle") }
+//apply { from("flutter.gradle") }
 //include ':flutter_module'
 
+// Alternative import to above
 //setBinding(new Binding([gradle: this, mainModuleName: 'app']))
 //evaluate(new File (
 //        settingsDir.parentFile,
 //        'ProjectX/flutter_module/.android/include_flutter.groovy'
 //))
-include ':flutter_module'
+
 include ':feature1'
