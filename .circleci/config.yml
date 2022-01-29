@@ -3,6 +3,7 @@
 version: '2.1'
 orbs:
   android: circleci/android@2.0
+  # flutter: circleci/flutter@1.0.1
 jobs:
   test:
     executor:
@@ -10,6 +11,14 @@ jobs:
       resource-class: large
       tag: 2021.10.1 # Missing required argument(s): tag
     steps:
+      # Issues with version
+      # - flutter/install_sdk_and_pub:
+      #     version: 2.2.3
+      # - flutter/install_android_gradle
+      # - flutter/install_android_gem
+      # - run:
+      #     command: bundle exec fastlane distribute
+      #     working_directory: android
       - checkout
       - android/start-emulator-and-run-tests:
           system-image: system-images;android-29;default;x86
