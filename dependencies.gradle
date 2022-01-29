@@ -16,6 +16,7 @@ ext.versions = [
 
         // architecture components
         ktx                  : '1.7.0',
+        activity             : '1.4.0',
         fragment             : '1.4.0',
         lifecycle            : '2.4.0',
         appCompat            : '1.4.0',
@@ -25,6 +26,9 @@ ext.versions = [
 
         // jetpack
         room                 : '2.4.1',
+        compose              : '1.2.0-alpha02', // Kotlin 1.6.10
+        composeActivity      : '1.3.1',
+//        composeViewModel     : '1.0.0-alpha07', // requires Kotlin 1.4.32
 
         // startup
         startup              : '1.1.0',
@@ -43,6 +47,11 @@ ext.versions = [
 
         // coroutines
         coroutines           : '1.6.0',
+
+        // firebase
+        firebase             : '4.3.10',
+        firebasePlatform     : '29.0.4',
+        crashlytics          : '2.8.1',
 
         // utility
         timber               : '5.0.1',

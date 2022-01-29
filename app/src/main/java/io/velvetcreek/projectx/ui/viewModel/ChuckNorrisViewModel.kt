@@ -41,8 +41,4 @@ class ChuckNorrisViewModel @Inject constructor(
 
     private val _joke = MutableStateFlow<JokeEvent>(JokeEvent.Empty)
     val joke: StateFlow<JokeEvent> = _joke
-
-    init {
-
-    }
 }
