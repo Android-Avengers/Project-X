@@ -108,7 +108,7 @@ dependencies {
     implementation "androidx.room:room-ktx:$versions.room" // coroutines
 
     // Flutter Module
-    implementation project(':flutter')
+//    implementation project(':flutter')
 
     // Firebase
     // Import the Firebase BoM

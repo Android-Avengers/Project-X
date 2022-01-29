@@ -12,7 +12,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import dagger.hilt.android.AndroidEntryPoint
-import io.flutter.embedding.android.FlutterActivity
+//import io.flutter.embedding.android.FlutterActivity
 import io.velvetcreek.projectx.persistence.AppDatabase
 import io.velvetcreek.projectx.Network.IApiService
 import io.velvetcreek.projectx.Network.IChuckNorrisService
@@ -53,11 +53,12 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        binding.btn.setOnClickListener {
-            startActivity(
-                FlutterActivity.createDefaultIntent(this)
-            )
-        }
+        // Uncomment after resolving Circle CI and Flutter Issues
+//        binding.btn.setOnClickListener {
+//            startActivity(
+//                FlutterActivity.createDefaultIntent(this)
+//            )
+//        }
 
         binding.btnGetJoke.setOnClickListener {
             chuckNorrisViewModel.getJoke()
