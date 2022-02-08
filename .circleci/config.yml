@@ -2,14 +2,14 @@
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: '2.1'
 orbs:
-  android: circleci/android@2.0
+  android: circleci/android@1.0.3
   # flutter: circleci/flutter@1.0.1
 jobs:
   test:
     executor:
       name: android/android-machine
       resource-class: large
-      tag: 2021.10.1 # Missing required argument(s): tag
+      # tag: 2021.10.1 # Missing required argument(s): tag # 2.0 thing?
     steps:
       # Issues with version
       # - flutter/install_sdk_and_pub:
@@ -21,7 +21,7 @@ jobs:
       #     working_directory: android
       - checkout
       - android/start-emulator-and-run-tests:
-          system-image: system-images;android-29;default;x86
+          system-image: system-images;android-30;google_apis;x86
 workflows:
   test:
     jobs:
