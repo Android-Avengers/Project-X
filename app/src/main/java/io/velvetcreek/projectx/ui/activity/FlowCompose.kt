@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.Surface
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
@@ -33,7 +34,10 @@ class FlowCompose : ComponentActivity() {
 
 @Composable
 fun Greeting(name: String) {
-    Text(text = "Hello $name!")
+    Column {
+        Text("What is a flow?")
+        Text("A flow is a coroutine that can emit multiple values over a period of time")
+    }
 }
 
 @Preview(showBackground = true)

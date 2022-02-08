@@ -3,6 +3,8 @@
 - DI persistence
 - Android 12 Themes
 - Fix junit4 dep errors, could be due to appcompat & jetpack clashing
+- Add feature flags via GitLabs
+- Slack vs Pinterest Linter
 
 ## Firebase
 - Need to add ```google-services.json``` to app level directory
