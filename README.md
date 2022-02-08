@@ -70,6 +70,14 @@ pbpaste
 Preview Method Params: cmd + p
 ```
 
+### Git
+```
+Undo first commit: git update-ref -d HEAD
+```
+
+## Git
+- Worktree: Swap branches without stashing and reinstalling deps, no need for multi clone repos
+
 ## GitHub
 - Strips inline styles from md files
 
