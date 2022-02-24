@@ -31,6 +31,10 @@
 - Add feature flags via GitLabs
 - Slack vs Pinterest Linter
 
+## Compose
+- Order of modifiers matter ex: padding then background vs background then padding
+
+
 ## Firebase
 - Need to add ```google-services.json``` to app level directory
 - Test user pass `qwerasdf`
@@ -77,6 +81,19 @@ Undo first commit: git update-ref -d HEAD
 
 ## Git
 - Worktree: Swap branches without stashing and reinstalling deps, no need for multi clone repos
+```
+git worktree add ../<branch_name> <branch_name*>
+git wortree list
+git worktree remove <branch_name*>
+
+```
+
+## Code Reviews
+Undo the last n number of commits of the PR via
+```
+git reset --soft HEAD~<number of commits>
+```
+Now all the changes will be highlighted and you can differentiate new from existing changes
 
 ## GitHub
 - Strips inline styles from md files
